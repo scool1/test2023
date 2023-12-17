@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صفحة الصوت</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .icon {
+      margin: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- أيقونة 1 -->
+  <div class="icon" onclick="toggleSound('https://file-examples.com/storage/fee4e04377657b56c9a6785/2017/11/file_example_MP3_700KB.mp3')">
+    <img src="https://www.iconsdb.com/icons/download/black/treble-clef-64.png" alt="أيقونة 1">
+  </div>
+
+  <!-- أيقونة 2 -->
+  <div class="icon" onclick="toggleSound('https://file-examples.com/storage/fee4e04377657b56c9a6785/2017/11/file_example_MP3_700KB.mp3')">
+    <img src="https://www.iconsdb.com/icons/download/black/saxophone-64.png" alt="أيقونة 2">
+  </div>
+
+  <!-- أيقونة 3 -->
+  <div class="icon" onclick="toggleSound('https://file-examples.com/storage/fee4e04377657b56c9a6785/2017/11/file_example_MP3_700KB.mp3')">
+    <img src="https://www.iconsdb.com/icons/download/black/note-64.png" alt="أيقونة 3">
+  </div>
+
+  <!-- أيقونة 4 -->
+  <div class="icon" onclick="toggleSound('https://file-examples.com/storage/fee4e04377657b56c9a6785/2017/11/file_example_MP3_700KB.mp3')">
+    <img src="https://www.iconsdb.com/icons/download/black/xylophone-64.png" alt="أيقونة 4">
+  </div>
+
+  <script>
+    var currentAudio = null;
+
+    function toggleSound(audioFile) {
+      if (currentAudio) {
+        currentAudio.pause();
+      }
+
+      if (currentAudio && currentAudio.src === audioFile) {
+        currentAudio = null;
+      } else {
+        currentAudio = new Audio(audioFile);
+        currentAudio.play();
+      }
+    }
+  </script>
+
+</body>
+</html>
